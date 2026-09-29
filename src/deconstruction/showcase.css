@@ -1,0 +1,1141 @@
+/* ==========================================================================
+   2005 BMW M3 E46 GTR · NEED FOR SPEED: MOST WANTED
+   Impeccable Design System: Automotive Editorial & Continuous Choreography
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #f5f6f9;
+  --bg-panel: rgba(255, 255, 255, 0.90);
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-focus: rgba(0, 0, 0, 0.22);
+  --text-main: #0e1217;
+  --text-dim: #4d5766;
+  --accent-blue: #1c69d2;
+  --accent-red: #d9141e;
+  --font-display: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  --font-metrics: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Luxury Motorsport Showroom Dark Mode (Default) */
+body.dark-mode {
+  --bg-color: #0e1117;
+  --bg-panel: rgba(16, 21, 28, 0.84);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(255, 255, 255, 0.24);
+  --text-main: #f5f7fa;
+  --text-dim: #9aa5b5;
+  --accent-blue: #2d82f5;
+  --accent-red: #f02835;
+  background: radial-gradient(circle at 50% 40%, #151b24 0%, #0a0d12 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(45, 130, 245, 0.35);
+  color: #ffffff;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+}
+body:not(.dark-mode)::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================================
+   FIXED 3D VIEWPORT CANVAS
+   ========================================================================== */
+#deconstruct-viewport {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* ==========================================================================
+   TOP EDITORIAL HEADER
+   ========================================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.brand-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+.brand-logo-text {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  white-space: nowrap;
+}
+
+.brand-status-pill {
+  font-family: var(--font-metrics);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+body:not(.dark-mode) .brand-status-pill {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.credit-pill {
+  font-family: var(--font-metrics);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(45, 130, 245, 0.09);
+  border: 1px solid rgba(45, 130, 245, 0.28);
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  pointer-events: auto;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.credit-pill-compact {
+  display: none;
+}
+
+@media (max-width: 540px) {
+  .credit-pill-full {
+    display: none;
+  }
+  .credit-pill-compact {
+    display: inline;
+  }
+}
+
+body:not(.dark-mode) .credit-pill {
+  background: rgba(28, 105, 210, 0.07);
+  border-color: rgba(28, 105, 210, 0.22);
+}
+
+.credit-pill:hover {
+  background: rgba(45, 130, 245, 0.16);
+  border-color: rgba(45, 130, 245, 0.50);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.header-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 20px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-main);
+  background: var(--bg-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.header-btn:hover {
+  border-color: var(--border-focus);
+  transform: translateY(-1px);
+}
+
+.header-btn.primary {
+  background: rgba(45, 130, 245, 0.12);
+  border-color: rgba(45, 130, 245, 0.35);
+  color: var(--accent-blue);
+}
+
+.header-btn.primary:hover {
+  background: rgba(45, 130, 245, 0.20);
+  border-color: rgba(45, 130, 245, 0.60);
+}
+
+/* ==========================================================================
+   FLOATING MINIMALIST STORY HUD (PURE EDITORIAL TYPOGRAPHY · ZERO BOXES)
+   Dynamic Positioning & Cinematic Fade-In / Fade-Out Motion
+   ========================================================================== */
+.floating-story-hud {
+  position: fixed;
+  z-index: 15;
+  pointer-events: none;
+  max-width: 380px;
+  transition: top 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              bottom 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              left 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              right 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 1. Top-Left (Ch 1 Splitter) */
+.floating-story-hud.pos-top-left {
+  top: 88px;
+  left: 36px;
+  right: auto;
+  bottom: auto;
+  transform: none;
+  text-align: left;
+}
+.floating-story-hud.pos-top-left .story-editorial {
+  align-items: flex-start;
+}
+
+/* 2. Bottom-Left (Ch 2 Wheels & Ch 4 Wing) */
+.floating-story-hud.pos-bottom-left {
+  top: auto;
+  bottom: 84px;
+  left: 36px;
+  right: auto;
+  transform: none;
+  text-align: left;
+}
+.floating-story-hud.pos-bottom-left .story-editorial {
+  align-items: flex-start;
+}
+
+/* 3. Top-Right (Ch 3 Cockpit & Ch 6 Legend) */
+.floating-story-hud.pos-top-right {
+  top: 88px;
+  right: 36px;
+  left: auto;
+  bottom: auto;
+  transform: none;
+  text-align: right;
+}
+.floating-story-hud.pos-top-right .story-editorial {
+  align-items: flex-end;
+}
+.floating-story-hud.pos-top-right .story-stage-desc {
+  margin-left: auto;
+}
+
+/* 4. Top-Center (Ch 5 Matrix Explosion) */
+.floating-story-hud.pos-top-center {
+  top: 84px;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 440px;
+}
+.floating-story-hud.pos-top-center .story-editorial {
+  align-items: center;
+}
+.floating-story-hud.pos-top-center .story-stage-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 5. Bottom-Center (Ch 3 Door / Cockpit Explainer) */
+.floating-story-hud.pos-bottom-center {
+  top: auto;
+  bottom: 84px;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  text-align: center;
+  max-width: 440px;
+}
+.floating-story-hud.pos-bottom-center .story-editorial {
+  align-items: center;
+}
+.floating-story-hud.pos-bottom-center .story-stage-desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.story-editorial {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  user-select: none;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.story-editorial.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.story-chapter-tag {
+  font-family: var(--font-metrics);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+}
+
+.story-stage-title {
+  font-family: var(--font-display);
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  margin: 0;
+  color: #ffffff;
+  line-height: 1.12;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
+}
+
+body.light-mode .story-stage-title,
+body:not(.dark-mode) .story-stage-title {
+  color: #0e1217;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.95);
+}
+
+.story-stage-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.48;
+  color: rgba(240, 244, 250, 0.78);
+  margin: 2px 0 0;
+  max-width: 34ch;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.8);
+}
+
+body.light-mode .story-stage-desc,
+body:not(.dark-mode) .story-stage-desc {
+  color: #3b4554;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95);
+}
+
+/* ==========================================================================
+   SCROLL REGIONS CONTAINER (INVISIBLE SCROLL TRACK)
+   ========================================================================== */
+#story-scroll-container {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  pointer-events: none;
+}
+
+.chapter-spacer {
+  height: 100vh;
+  width: 100%;
+}
+
+/* ==========================================================================
+   3D SPATIAL PIN MARKERS (SUBTLE & CRISP)
+   ========================================================================== */
+#spatial-pins-container {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.spatial-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: auto;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: opacity 0.25s ease;
+}
+
+.pin-ring {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-blue);
+  background: rgba(45, 130, 245, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.pin-ring::after {
+  content: '';
+  width: 3.5px;
+  height: 3.5px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+}
+
+.pin-label {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: var(--text-main);
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.spatial-pin:hover .pin-label {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* ==========================================================================
+   BOTTOM COMPACT HUD DOCK
+   ========================================================================== */
+.bottom-dock {
+  position: fixed;
+  bottom: 24px;
+  left: 36px;
+  right: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.slider-panel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  pointer-events: auto;
+}
+
+.slider-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.hud-btn {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+body:not(.dark-mode) .hud-btn {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.hud-btn:hover {
+  border-color: var(--border-focus);
+}
+
+.scrub-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 180px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  outline: none;
+  cursor: pointer;
+}
+
+body:not(.dark-mode) .scrub-slider {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.scrub-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-main);
+  cursor: pointer;
+  border: 2px solid var(--bg-panel);
+  transition: transform 0.15s ease;
+}
+
+.scrub-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.slider-badge {
+  font-family: var(--font-metrics);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent-blue);
+  font-variant-numeric: tabular-nums;
+  min-width: 72px;
+  text-align: right;
+}
+
+/* Finish Swatches */
+.finishes-panel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 30px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  pointer-events: auto;
+}
+
+.swatch-btn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.swatch-btn:hover {
+  transform: scale(1.15);
+}
+
+.swatch-btn.active {
+  border-color: var(--text-main);
+  transform: scale(1.15);
+}
+
+/* ==========================================================================
+   VERTICAL TIMELINE INDICATOR
+   ========================================================================== */
+.timeline-indicator {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 15;
+  pointer-events: none;
+}
+
+.timeline-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  opacity: 0.35;
+  transition: all 0.3s ease;
+}
+
+.timeline-dot.active {
+  opacity: 1;
+  background: var(--text-main);
+  transform: scale(1.4);
+}
+
+/* ==========================================================================
+   PART INSPECTION DRAWER
+   ========================================================================== */
+.inspect-drawer {
+  position: fixed;
+  top: 88px;
+  right: 36px;
+  width: 360px;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  border-radius: 14px;
+  background: var(--bg-panel);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  padding: 24px 28px;
+  z-index: 30;
+  opacity: 0;
+  transform: translateX(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.inspect-drawer.open {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.drawer-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.25;
+}
+
+.close-drawer-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text-dim);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.close-drawer-btn:hover {
+  color: var(--text-main);
+}
+
+.drawer-desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+  margin: 0 0 18px;
+}
+
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.spec-label {
+  font-family: var(--font-body);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.spec-val {
+  font-family: var(--font-metrics);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-main);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ==========================================================================
+   MOBILE ORIENTATION PROMPT (ASK TO ROTATE PHONE TO LANDSCAPE)
+   ========================================================================== */
+.orientation-prompt {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 11, 16, 0.92);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+body:not(.dark-mode) .orientation-prompt {
+  background: rgba(240, 242, 246, 0.94);
+}
+
+
+/* Always hide in landscape */
+/* Show only on narrow tall portrait phones (aspect ratio < 0.62 and width <= 540px)
+   Excludes Galaxy Fold inner screens (~0.75 - 1.25 aspect ratio), tablets, laptops, and landscape */
+@media (max-width: 540px) and (max-aspect-ratio: 13/21) {
+  .orientation-prompt:not(.dismissed) {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Always hide in landscape */
+@media (orientation: landscape) {
+  .orientation-prompt {
+    display: none !important;
+  }
+}
+
+.orientation-prompt.dismissed {
+  display: none !important;
+}
+
+.orientation-card {
+  max-width: 320px;
+  width: 100%;
+  padding: 28px 20px;
+  border-radius: 20px;
+  background: var(--bg-panel);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  animation: cardFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.orientation-icon-wrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(45, 130, 245, 0.12);
+  border: 1px solid rgba(45, 130, 245, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotate-phone-svg {
+  width: 38px;
+  height: 38px;
+  color: var(--text-main);
+}
+
+.animated-phone {
+  transform-origin: 27px 27px;
+  animation: rotatePhone 2.6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+}
+
+@keyframes rotatePhone {
+  0%, 20% {
+    transform: rotate(0deg);
+  }
+  50%, 70% {
+    transform: rotate(90deg);
+  }
+  90%, 100% {
+    transform: rotate(0deg);
+  }
+}
+
+.orientation-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.orientation-desc {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--text-dim);
+  margin: 0;
+}
+
+.orientation-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+  width: 100%;
+}
+
+.orientation-btn-primary {
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  background: var(--accent-blue);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(45, 130, 245, 0.4);
+  transition: all 0.2s ease;
+}
+
+.orientation-btn-primary:hover {
+  background: #196fe0;
+  transform: translateY(-1px);
+}
+
+.orientation-btn-dismiss {
+  width: 100%;
+  padding: 9px 16px;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+body:not(.dark-mode) .orientation-btn-dismiss {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.orientation-btn-dismiss:hover {
+  color: var(--text-main);
+  border-color: var(--border-focus);
+}
+
+/* ==========================================================================
+   RESPONSIVE ADAPTATIONS (GALAXY FOLD, TABLETS, MOBILE LANDSCAPE & PORTRAIT)
+   ========================================================================== */
+
+/* 1. Mobile Landscape (max-height <= 620px) */
+@media (max-height: 620px) and (orientation: landscape) {
+  .site-header {
+    height: 40px;
+    padding: 0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
+  }
+  .brand-logo-text {
+    font-size: 11px;
+  }
+  .credit-pill {
+    font-size: 8.5px;
+    padding: 2px 7px;
+  }
+  .header-btn {
+    font-size: 8.5px;
+    padding: 3px 8px;
+  }
+  .floating-story-hud {
+    max-width: 260px;
+  }
+  .floating-story-hud.pos-top-left {
+    top: 42px;
+    left: max(14px, env(safe-area-inset-left));
+    right: auto;
+    bottom: auto;
+    transform: none;
+    text-align: left;
+  }
+  .floating-story-hud.pos-top-right {
+    top: 42px;
+    right: max(14px, env(safe-area-inset-right));
+    left: auto;
+    bottom: auto;
+    transform: none;
+    text-align: right;
+  }
+  .floating-story-hud.pos-bottom-left {
+    top: auto;
+    bottom: max(36px, env(safe-area-inset-bottom));
+    left: max(14px, env(safe-area-inset-left));
+    right: auto;
+    transform: none;
+    text-align: left;
+  }
+  .floating-story-hud.pos-top-center {
+    top: 42px;
+    left: max(14px, env(safe-area-inset-left));
+    right: auto;
+    bottom: auto;
+    transform: none;
+    text-align: left;
+  }
+  .floating-story-hud.pos-bottom-center {
+    top: auto;
+    bottom: max(36px, env(safe-area-inset-bottom));
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    text-align: center;
+    max-width: 280px;
+  }
+  .story-chapter-tag {
+    font-size: 9px;
+  }
+  .story-stage-title {
+    font-size: 1.15rem;
+  }
+  .story-stage-desc {
+    font-size: 0.74rem;
+    line-height: 1.35;
+  }
+  .bottom-dock {
+    bottom: max(6px, env(safe-area-inset-bottom));
+    left: max(14px, env(safe-area-inset-left));
+    right: max(14px, env(safe-area-inset-right));
+  }
+  .slider-panel {
+    padding: 4px 10px;
+    gap: 8px;
+  }
+  .scrub-slider {
+    width: 100px;
+    height: 3px;
+  }
+  .slider-label {
+    font-size: 8.5px;
+  }
+  .slider-badge {
+    font-size: 8.5px;
+    min-width: 54px;
+  }
+  .finishes-panel {
+    padding: 4px 8px;
+    gap: 6px;
+  }
+  .swatch-btn {
+    width: 14px;
+    height: 14px;
+  }
+  .timeline-indicator {
+    right: max(8px, env(safe-area-inset-right));
+    gap: 8px;
+  }
+  .timeline-dot {
+    width: 4px;
+    height: 4px;
+  }
+}
+
+/* 2. Narrow Screens & Galaxy Fold Cover Screens (max-width <= 768px) */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0 max(10px, env(safe-area-inset-right)) 0 max(10px, env(safe-area-inset-left));
+    height: 48px;
+    gap: 6px;
+  }
+  .brand-badge {
+    gap: 6px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+  .brand-logo-text {
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+  .credit-pill {
+    font-size: 8.5px;
+    padding: 2.5px 7px;
+  }
+  .header-actions {
+    gap: 5px;
+    flex-shrink: 0;
+  }
+  .header-btn {
+    font-size: 9px;
+    padding: 4px 7px;
+  }
+  .floating-story-hud {
+    max-width: calc(100% - 32px);
+  }
+  .floating-story-hud.pos-top-left {
+    top: 54px;
+    left: 16px;
+    right: 16px;
+    bottom: auto;
+    transform: none;
+    text-align: left;
+  }
+  .floating-story-hud.pos-top-right {
+    top: 54px;
+    left: 16px;
+    right: 16px;
+    bottom: auto;
+    transform: none;
+    text-align: right;
+  }
+  .floating-story-hud.pos-top-center {
+    top: 52px;
+    left: 16px;
+    right: 16px;
+    bottom: auto;
+    transform: none;
+    text-align: center;
+  }
+  .floating-story-hud.pos-bottom-left {
+    top: auto;
+    bottom: 84px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+    text-align: left;
+  }
+  .floating-story-hud.pos-bottom-center {
+    top: auto;
+    bottom: 84px;
+    left: 16px;
+    right: 16px;
+    transform: none;
+    text-align: center;
+  }
+  .story-stage-title {
+    font-size: 1.35rem;
+  }
+  .story-stage-desc {
+    font-size: 0.80rem;
+    max-width: 32ch;
+  }
+  .bottom-dock {
+    left: 12px;
+    right: 12px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+  }
+  .slider-panel {
+    width: 100%;
+    max-width: 290px;
+    justify-content: space-between;
+    padding: 5px 12px;
+  }
+  .scrub-slider {
+    flex: 1;
+    max-width: 130px;
+  }
+  .timeline-indicator {
+    display: none;
+  }
+}
+
+/* 3. Ultra-Narrow Galaxy Fold Outer Screen (max-width: 420px) */
+@media (max-width: 420px) {
+  .site-header {
+    height: 42px;
+    padding: 0 10px;
+  }
+  .brand-logo-text {
+    font-size: 10.5px;
+  }
+  .credit-pill {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+  .floating-story-hud {
+    top: 50px;
+    left: 12px;
+    right: 12px;
+  }
+  .story-stage-title {
+    font-size: 1.18rem;
+  }
+  .story-stage-desc {
+    font-size: 0.75rem;
+  }
+  .slider-panel {
+    max-width: 260px;
+    padding: 4px 10px;
+  }
+  .scrub-slider {
+    max-width: 100px;
+  }
+}

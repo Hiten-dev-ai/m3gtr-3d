@@ -1,0 +1,77 @@
+{
+  "uid": "2999936a393340c0a389c6bd31961a63",
+  "name": "2005 BMW M3 E46 GTR - NFS Most Wanted",
+  "url": "https://sketchfab.com/3d-models/2005-bmw-m3-e46-gtr-nfs-most-wanted-2999936a393340c0a389c6bd31961a63",
+  "author": {
+    "name": "Ddiaz Design",
+    "url": "https://sketchfab.com/ddiaz-design"
+  },
+  "license": {
+    "name": "CC Attribution-NonCommercial-ShareAlike",
+    "slug": "by-nc-sa",
+    "url": "http://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "downloadable": true,
+  "faces": 83754,
+  "vertices": 48789,
+  "thumbnails": [
+    {
+      "url": "https://media.sketchfab.com/models/2999936a393340c0a389c6bd31961a63/thumbnails/97ea33374cc149ce84c8db43458f403c/7667062d30f74fdbac743beda1a9a8d1.jpeg",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "url": "https://media.sketchfab.com/models/2999936a393340c0a389c6bd31961a63/thumbnails/97ea33374cc149ce84c8db43458f403c/70606b429ec843f7866198d60f4de538.jpeg",
+      "width": 1024,
+      "height": 576
+    },
+    {
+      "url": "https://media.sketchfab.com/models/2999936a393340c0a389c6bd31961a63/thumbnails/97ea33374cc149ce84c8db43458f403c/a0efd950eb45469dbe220b1b7104680a.jpeg",
+      "width": 720,
+      "height": 405
+    },
+    {
+      "url": "https://media.sketchfab.com/models/2999936a393340c0a389c6bd31961a63/thumbnails/97ea33374cc149ce84c8db43458f403c/550cf552b29042aca29b5299816ddc26.jpeg",
+      "width": 256,
+      "height": 144
+    },
+    {
+      "url": "https://media.sketchfab.com/models/2999936a393340c0a389c6bd31961a63/thumbnails/97ea33374cc149ce84c8db43458f403c/ae33177c680d4dad962ab9d5ad046ffd.jpeg",
+      "width": 64,
+      "height": 36
+    }
+  ],
+  "source": "Sketchfab",
+  "retrievedAt": "2026-09-29T04:22:46.164Z",
+  "file": "model.glb",
+  "sha256": "21e329cb71cd9d57b90000950464dce403893146796e18f5b405f7089b0943cb",
+  "inspection": {
+    "bytes": 5911848,
+    "meshes": 45,
+    "nodes": 92,
+    "materials": 14,
+    "images": 34,
+    "animations": [],
+    "skins": 0,
+    "meshTriangles": 83736,
+    "extensionsRequired": [],
+    "externalResources": [],
+    "asset": {
+      "extras": {
+        "author": "Ddiaz Design (https://sketchfab.com/ddiaz-design)",
+        "license": "CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)",
+        "source": "https://sketchfab.com/3d-models/2005-bmw-m3-e46-gtr-nfs-most-wanted-2999936a393340c0a389c6bd31961a63",
+        "title": "2005 BMW M3 E46 GTR - NFS Most Wanted"
+      },
+      "generator": "Sketchfab-16.61.0",
+      "version": "2.0"
+    },
+    "scope": "Structural summary; counts exclude repeated mesh instances. Render and validate separately."
+  },
+  "modifications": [],
+  "review": {
+    "visual": "pending",
+    "licenseUse": "pending",
+    "scale": "unknown"
+  }
+}

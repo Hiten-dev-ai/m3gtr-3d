@@ -1,0 +1,18 @@
+{
+  "name": "m3gtr-3d",
+  "version": "1.0.0",
+  "description": "3D Interactive Scroll-Driven Mechanical Deconstruction Showcase of the BMW M3 E46 GTR",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "vite": "^8.3.1"
+  }
+}
